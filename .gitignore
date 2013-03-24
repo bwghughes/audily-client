@@ -1,0 +1,8 @@
+node_modules/
+bin/
+!bin/gint-module.js
+coverage/
+temp/
+npm-debug.log
+
+.DS_Store

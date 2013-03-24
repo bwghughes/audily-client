@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <h3>Test Page</h3>
+    <h4>{{message}}</h4>
+    <h5>{{info}}</h5>
+    <ul ng-repeat="test in tests">
+      <li>{{test.id}} - {{test.date | date:'dd/MM/yyyy HH:mm'}} - {{test.name}}</li>
+    </ul>
+    <testform submit-text="save" submit="save()"></testform>
+  </div>
+</div>
