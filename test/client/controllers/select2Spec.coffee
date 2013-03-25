@@ -21,12 +21,16 @@ describe 'test controller', ->
     it 'should set sources',()->
       data = [
         {
-          _id: '1'
+          id: '1'
           description: 'Option 1'
         },
         {
-          _id: '2'
+          id: '2'
           description: 'Option 2'
+        },
+        {
+          id: '3'
+          description: 'Option 3'
         }
       ]
       expect(scope.sources).toEqualData(data)
