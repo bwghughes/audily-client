@@ -1,0 +1,4 @@
+<select ui-select2  class="input-large" ng-model="job.source" data-placeholder="Select Source">
+  <option></option>
+  <option ng-repeat="s in sources" value="{{s._id}}">{{s.description}}</option>
+</select>
