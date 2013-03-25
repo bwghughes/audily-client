@@ -21,13 +21,14 @@ Angular JS sample project / seed
   - `grunt run`
   - browse to: `http://localhost:9001`
 
+
 - Continuous Unit Testing
   - Run Karma server
   In a separate terminal type `grunt karma:unit`, then back in the 
   primary terminal window, do grunt run as normal
   
-  - Use `grunt run`
-  You should then 
+  - Use `grunt run` You should then see that the tests run after every file change (along with live-reload)
+
 
 - Coverage Tests
   Make sure you're not running dev (may well cause the file watchers to blow up). Then simply do `grunt coverage`. A ./coverage folder should be created in the root of the project, browse within that to index.html and you should have a coverage report
