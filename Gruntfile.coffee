@@ -50,6 +50,11 @@ module.exports = (grunt) ->
         dest: 'temp/client/css/styles.css'
         src: 'client/css/styles.less'
     
+    concat:
+      css:
+        src: ['temp/client/css/styles.css', 'client/css/select2.css']
+        dest: 'bin/client/css/styles.css'
+
     template:
       dev:
         dest: 'bin/client/index.html'
@@ -70,7 +75,7 @@ module.exports = (grunt) ->
       dev:
         expand: true
         cwd: 'temp/client'
-        src: ['**']
+        src: ['**', '!css/**']
         dest: 'bin/client' 
       prod:
         expand: true
@@ -174,15 +179,16 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-connect'
+  grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-gint'
   grunt.loadNpmTasks 'grunt-karma'
   grunt.loadNpmTasks 'grunt-reload'
 
   grunt.registerTask 'build'
-  , ['clean', 'coffeeLint', 'coffee', 'less', 'template:dev', 'ngTemplateCache', 'copy:static', 'copy:dev', 'clean:temp']
+  , ['clean', 'coffeeLint', 'coffee', 'less', 'concat:css', 'template:dev', 'ngTemplateCache', 'copy:static', 'copy:dev', 'clean:temp']
 
   grunt.registerTask 'prod'
-  , ['clean', 'coffeeLint', 'coffee', 'less', 'template:prod', 'ngTemplateCache', 'copy:static', 'copy:prod', 'requirejs', 'clean:temp']
+  , ['clean', 'coffeeLint', 'coffee', 'less', 'concat:css', 'template:prod', 'ngTemplateCache', 'copy:static', 'copy:prod', 'requirejs', 'clean:temp']
 
   grunt.registerTask 'default'
   , ['build', 'karma:unit']

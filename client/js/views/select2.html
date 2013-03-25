@@ -1,0 +1,12 @@
+<select ui-select2  class="input-large" ng-model="source" data-placeholder="Select Source">
+  <option></option>
+  <option ng-repeat="s in sources" value="{{s._id}}">{{s.description}}</option>
+</select>
+
+<pre>
+    tagsSelection: {{tagsSelection | json}}
+</pre>
+
+<button class="btn btn-primary" ng-click="updateVal()">Update Value</button>
+
+<input type="text"  id="tagsSelection" ui-select2="tagAllOptions" ng-model="tagsSelection" style="width:300px;" />
