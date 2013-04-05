@@ -9,7 +9,7 @@ module.exports = (grunt) ->
       temp:
         src: ['temp']
 
-    coffeeLint: 
+    coffeeLint:
       scripts:
         files: [
           {
@@ -21,7 +21,7 @@ module.exports = (grunt) ->
           indentation:
             value: 2
             level: 'error'
-          no_plusplus: 
+          no_plusplus:
             level: 'error'
       tests:
         files: [
@@ -34,7 +34,7 @@ module.exports = (grunt) ->
           indentation:
             value: 2
             level: 'error'
-          no_plusplus: 
+          no_plusplus:
             level: 'error'
     coffee:
       scripts:
@@ -49,7 +49,7 @@ module.exports = (grunt) ->
       styles:
         dest: 'temp/client/css/styles.css'
         src: 'client/css/styles.less'
-    
+
     concat:
       css:
         src: ['temp/client/css/styles.css', 'client/css/select2.css']
@@ -76,7 +76,7 @@ module.exports = (grunt) ->
         expand: true
         cwd: 'temp/client'
         src: ['**', '!css/**']
-        dest: 'bin/client' 
+        dest: 'bin/client'
       prod:
         expand: true
         cwd: 'temp/client'
@@ -86,7 +86,7 @@ module.exports = (grunt) ->
         expand: true
         cwd: 'client/'
         src: ['img/*', 'js/libs/*.js', '*.json']
-        dest: 'temp/client' 
+        dest: 'temp/client'
 
     requirejs:
       scripts:
@@ -157,7 +157,7 @@ module.exports = (grunt) ->
       unit:
         configFile: 'test/karma.conf.js'
         reporters: ['dots', 'growl']
-        singleRun: true
+        singleRun: false
       ci:
         configFile: 'test/karma.conf.js'
         reporters: ['dots', 'growl']
@@ -191,7 +191,7 @@ module.exports = (grunt) ->
   , ['clean', 'coffeeLint', 'coffee', 'less', 'concat:css', 'template:prod', 'ngTemplateCache', 'copy:static', 'copy:prod', 'requirejs', 'clean:temp']
 
   grunt.registerTask 'default'
-  , ['build', 'karma:unit']
+  , ['build']
 
   grunt.registerTask 'travis'
   , ['build', 'karma:travis']

@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"        xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"               xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <![endif]-->
-<!--[if gt IE 8]><!--> 
+<!--[if gt IE 8]><!-->
 <html class="no-js <% if (config.environment === 'test') { %> ng-app <% } %>" xmlns:ng="http://angularjs.org" xmlns:app="ignored"> <!--<![endif]-->
   <head>
     <meta charset="utf-8"/>
@@ -37,7 +37,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </a>
-            <a ng-cloak class="brand" href="/">Gint-Client</a>
+            <a ng-cloak class="brand" href="/">Audily Client</a>
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <li class="dropdown">
